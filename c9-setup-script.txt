@@ -1,4 +1,20 @@
 #!/bin/bash
+echo 'Updating System Step 01/09'
 sudo yum -y update
-
-echo 'installation complete'
+echo 'Updating System Step 02/09'
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+echo 'Updating System Step 03/09'
+nvm install lts/carbon
+echo 'Updating System Step 04/09'
+nvm alias default lts/carbon
+echo 'Updating System Step 05/09'
+nvm install node
+echo 'Updating System Step 06/09'
+nvm ls
+echo 'Updating System Step 07/09'
+nvm use 13.11.0
+echo 'Updating System Step 08/09'
+nvm alias default v13.11.0
+echo 'Updating System Step 09/09'
+npm install -g @angular/cli
+echo 'installation complete ready to run angular app'
