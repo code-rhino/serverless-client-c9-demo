@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { Subject, Observable, Observer } from 'rxjs';
 import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
 
-const CHAT_URL = "wss://ryxmrqp4k0.execute-api.us-east-1.amazonaws.com/dev";
+const CHAT_URL = "";
 
 export interface Message {
   action: string;
@@ -15,17 +15,5 @@ export interface Message {
 })
 export class SocketService {
   myWebSocket:WebSocketSubject<any>;
-
-  constructor(){
-    this.myWebSocket = webSocket({
-      url:CHAT_URL,
-      deserializer: msg => {
-        return msg;
-      }
-    });
-
-
-  }
-
-
+  constructor(){}
 }
